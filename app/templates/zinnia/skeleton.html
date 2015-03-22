@@ -4,19 +4,26 @@
   <head>
     <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Zinnia's Weblog</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="cache-control" content="public" />
     <meta name="robots" content="follow, all" />
     <meta name="language" content="{{ LANGUAGE_CODE }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{% block meta-description %}{% trans "Just another Zinnia weblog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
     <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
     <meta name="author" content="Fantomas42" />
     {% block meta %}{% endblock meta %}
     <link rel="pingback" href="/xmlrpc/" />
     <link rel="shortcut icon" href="{% static "zinnia/theme/img/favicon.ico" %}" />
-    <link rel="home" href="{% url 'zinnia:entry_archive_index' %}" />
-    <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/screen.css" %}" />
-    <link rel="stylesheet" type="text/css" media="print" href="{% static "zinnia/theme/css/print.css" %}" />
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}" />
+    <link rel="stylesheet" href="{% static "css/foundation.css" %}" />
+    <link rel="stylesheet" href="{% static "img/foundation-icons.css" %}" />
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{% static "css/app.css" %}">
+    <!-- custom fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+    <script src="{% static "js/vendor/modernizr.js" %}"></script>
     <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/theme/css/ie.css" %}" />
     <![endif]-->
@@ -24,67 +31,134 @@
     {% block script %}{% endblock script %}
   </head>
   <body class="zinnia {% block theme-class %}default{% endblock theme-class %} {% block color-class %}blue{% endblock color-class %} {% block sidebar-class %}right-sidebar{% endblock sidebar-class %} {% block body-class %}{% endblock body-class %}">
-    <div class="container">
-      <div id="header">
-        <ul class="top-navigation">
-          <li>
-            <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">
-              {% trans "Sitemap" %}
-            </a>
-          </li>
-          <li>
-            <a href="{% url 'zinnia:entry_latest_feed' %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">
-              {% trans "RSS Feed" %}
-            </a>
-          </li>
+  <!-- Nav bar first -->
+   <div class="contain-to-grid">
+     <nav class="top-bar">
+       <ul class="title-area">
+         <li class="name">
+          <a href="#" class="page-name">Leonardo's blog</a><b class="label beta">beta</b>
+         </li>
+         <li class="toggle-topbar menu-icon">
+         </li>
         </ul>
-        <form method="get" action="{% url 'zinnia:entry_search' %}">
-          <p>
-            <input type="text" name="pattern" placeholder="{% trans "Keywords..." %}" {% if pattern %}value="{{ pattern }}"{% endif %} />
-            <input type="submit" class="submitbutton" value="OK" />
-          </p>
-        </form>
-        <h1>
-          <a href="{% url 'zinnia:entry_archive_index' %}" title="Zinnia's Weblog" rel="home">
-            Zinnia's Weblog
-          </a>
-        </h1>
-        <blockquote>
-          <p>{% trans "Just another Zinnia weblog." %}</p>
-        </blockquote>
-        {% block breadcrumbs %}{% endblock breadcrumbs %}
-      </div>
-      {% block slider %}{% endblock slider %}
-      <div id="content" class="hfeed">
-        {% block content %}
-        <div class="links">
-          <h2>{% trans "Useful links" %}</h2>
-          <ul>
-            <li>
-              <a href="{% url 'zinnia:entry_archive_index' %}" title="{% trans "Weblog index" %}">
-                {% trans "Weblog index" %}
-              </a>
-            </li>
-            <li>
-              <a href="{% url 'zinnia:sitemap' %}" title="{% trans "Sitemap" %}">
-                {% trans "Sitemap" %}
-              </a>
-            </li>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li><a href="https://github.com/xpostudio4"><i class="fi-social-github social-navbar"></a></i></li>
+            <li><a href="#"><i class="fi-social-linkedin social-navbar"></a></i></li>
+            <li><a href="#"><i class="fi-social-twitter social-navbar"></a></i></li>
+            <li><a href="#"><i class="fi-mail social-navbar"></a></i></li>
           </ul>
+        </section>
+        <section class="top-bar-section">
+          <ul class="right">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </section>
+     </nav>
+  </div>
+      
+  <br/><br/>
+  <!-- Content creation -->
+  <div class="large-12 columns first-post">
+    <div class="large-2 large-offset-2 columns text-center">
+      <a class="th" href="#">
+        <img src="{% static "img/cool.jpg" %}">
+      </a>
+    </div>
+    <div class="large-6 columns blog-post-title end">
+      <h1>Don’t Be Interesting</h1>
+      <h5 class='subheader'>March 19, 2015</h5>
+      <div class="post-description copy">
+        <p>In my last post, I explained how a disciplined approach to designing creates better results. But how does one go about selecting the perfect combination of features to include in your designs?</p>
+        <div class="row">
+        <p class="tags left">
+          <a class="tag-container" href="">design</a>
+          <a class="tag-container" href="">creativity</a>
+          <a class="tag-container" href="">computers</a>
+          <a class="tag-container" href="">productivity</a>
+        </p>
         </div>
-        <div class="search">
-          <h2>{% trans "Search" %}</h2>
-          {% include "zinnia/tags/search_form.html" %}
-        </div>
-        {% endblock content %}
-      </div>
-      <div id="sidebar">
-        {% block sidebar %}
-        {% endblock sidebar %}
-      </div>
-      <div id="footer">
-        <p>{% blocktrans %}Powered by <a href="http://www.djangoproject.com">Django</a> and <a href="https://github.com/Fantomas42/django-blog-zinnia">Zinnia {{ ZINNIA_VERSION }}</a>.{% endblocktrans %}</p>
       </div>
     </div>
+  </div>
+  
+  <div class="large-8 large-offset-2 columns end"><hr></div>
+
+  <div class="large-12 columns">
+    <div class="large-2 large-offset-2 columns text-center">
+      <a class="th" href="#">
+        <img src="{% static "img/goalGray.png" %}">
+      </a>
+    </div>
+    <div class="large-6 columns blog-post-title end">
+      <h1>Finishing</h1>
+      <h5 class='subheader'>December 23, 2014</h5>
+      <div class="post-description copy">
+        <p>For me, starting a project is thrilling. The unknown is exciting. The opportunity to solve new problems in new ways is inspiring. But nothing compares to the joy of finishing. Starting is easy. Finishing is hard.</p>
+        <div class="row">
+        <p class="tags left">
+          <a class="tag-container" href="">discipline</a>
+          <a class="tag-container" href="">creativity</a>
+          <a class="tag-container" href="">productivity</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="large-8 large-offset-2 columns end"><hr></div>
+
+  <div class="large-12 columns">
+    <div class="large-2 large-offset-2 columns text-center">
+      <a class="th" href="#">
+        <img src="{% static "img/creativity.jpg" %}">
+      </a>
+    </div>
+    <div class="large-6 columns blog-post-title end">
+      <h1>The Threat of Creativity</h1>
+      <h5 class='subheader'>October 23, 2014</h5>
+      <div class="post-description copy">
+        <p>Designers tend to laud the concept of creativity. A unique, original idea that has never existed before. It takes imagination. Skill. Vision. Confidence.</p>
+        <div class="row">
+        <p class="tags left">
+          <a class="tag-container" href="">discipline</a>
+          <a class="tag-container" href="">creativity</a>
+          <a class="tag-container" href="">not so obvious</a>
+          <a class="tag-container" href="">productivity</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="row">
+    <div class="footer-space"><br></div>
+  </div>
+  <footer>
+    <div class="row">
+      <div class="large-6 columns left copyright">
+        Copyright ©2015 Leonardo Jimenez. All Rights Reserved.
+      </div>
+      <div class="large-6 columns right">
+        <section>
+          <ul class="right inline-list">
+            <li><a href="https://github.com/xpostudio4"><i class="fi-social-github social-footer"></a></i></li>
+            <li><a href="#"><i class="fi-social-linkedin social-footer"></a></i></li>
+            <li><a href="#"><i class="fi-social-twitter social-footer"></a></i></li>
+            <li><a href="#"><i class="fi-mail social-footer"></a></i></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </footer>
+
+    <script src="{% static "js/vendor/jquery.js" %}"></script>
+    <script src="{% static "js/foundation.min.js" %}></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>

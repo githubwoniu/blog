@@ -1,0 +1,88 @@
+h1 {
+
+ font-family: 'Lato', Helvetica, Roboto, Arial, sans-serif;
+ font-size: 2.125rem;
+}
+
+h2{
+  font-family: 'Lato', Helvetica, Roboto, Arial, sans-serif;
+}
+
+p {
+	font-family: 'Merriweather', Helvetica, Roboto, Arial, sans-serif;
+	color: #666;
+}
+
+.subheader {
+	color: #888;
+	font-family: 'Merriweather', Helvetica, Roboto, Arial, sans-serif;
+}
+.label {
+	background-color: #666;
+	color: #fff;
+	margin: auto;
+	bottom: 30%;
+}
+
+.page-name{
+	font-family: 'Lato', Helvetica, Roboto, Arial, sans-serif;
+ 	font-size: 1.5rem;
+ 	color: #fff;	
+}
+
+.blog-month { 
+	font-size: 20px;
+}
+
+.blog-day{
+	font-size: 49px;
+	color: #666;
+}
+
+.first-post{
+	margin-top: 30px;
+}
+
+.blog-date{
+	font-size: 40px;
+}
+.contain-to-grid .top-bar {
+	height: 4rem;
+}
+
+.top-bar, .contain-to-grid, .top-bar-section, .top-bar-section li:not(.has-form) a:not(.button) {
+
+	background: #666;
+}
+
+.social-navbar {
+	color: #fff;
+	font-size: 2rem;
+	margin: 0px;
+}
+
+
+.top-bar-section ul li, .contain-to-grid .top-bar .title-area {
+	margin-top: 10px;
+}
+a.tag-container {
+	border: #ccc 1px solid;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+	padding: 0px 4px;
+	color: #666;
+}
+
+.copyright{
+	font-family: 'Lato', Helvetica, Roboto, Arial, sans-serif;
+}
+
+.social-footer{
+	font-size: 2rem;
+	color: #666;
+}
+
+ .footer-space {
+	min-height: 50px;
+}
