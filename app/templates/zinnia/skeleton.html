@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %} - Zinnia's Weblog</title>
+    <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="cache-control" content="public" />
@@ -30,13 +30,13 @@
     {% block link %}{% endblock link %}
     {% block script %}{% endblock script %}
   </head>
-  <body class="zinnia {% block theme-class %}default{% endblock theme-class %} {% block color-class %}blue{% endblock color-class %} {% block sidebar-class %}right-sidebar{% endblock sidebar-class %} {% block body-class %}{% endblock body-class %}">
+  <body>
   <!-- Nav bar first -->
    <div class="contain-to-grid">
      <nav class="top-bar">
        <ul class="title-area">
          <li class="name">
-          <a href="#" class="page-name">Leonardo's blog</a><b class="label beta">beta</b>
+          <a href="/" class="page-name">Leonardo's blog</a><b class="label beta">beta</b>
          </li>
          <li class="toggle-topbar menu-icon">
          </li>
@@ -44,9 +44,9 @@
         <section class="top-bar-section">
           <ul class="right">
             <li><a href="https://github.com/xpostudio4"><i class="fi-social-github social-navbar"></a></i></li>
-            <li><a href="#"><i class="fi-social-linkedin social-navbar"></a></i></li>
-            <li><a href="#"><i class="fi-social-twitter social-navbar"></a></i></li>
-            <li><a href="#"><i class="fi-mail social-navbar"></a></i></li>
+            <li><a href="https://do.linkedin.com/in/leonardoajimenez"><i class="fi-social-linkedin social-navbar"></a></i></li>
+            <li><a href="https://twitter.com/leonardoajim"><i class="fi-social-twitter social-navbar"></a></i></li>
+            <li><a href="mailto:leonardo@codetiger.co"><i class="fi-mail social-navbar"></a></i></li>
           </ul>
         </section>
         <section class="top-bar-section">
@@ -60,83 +60,13 @@
   </div>
       
   <br/><br/>
-  <!-- Content creation -->
-  <div class="large-12 columns first-post">
-    <div class="large-2 large-offset-2 columns text-center">
-      <a class="th" href="#">
-        <img src="{% static "img/cool.jpg" %}">
-      </a>
-    </div>
-    <div class="large-6 columns blog-post-title end">
-      <h1>Don’t Be Interesting</h1>
-      <h5 class='subheader'>March 19, 2015</h5>
-      <div class="post-description copy">
-        <p>In my last post, I explained how a disciplined approach to designing creates better results. But how does one go about selecting the perfect combination of features to include in your designs?</p>
-        <div class="row">
-        <p class="tags left">
-          <a class="tag-container" href="">design</a>
-          <a class="tag-container" href="">creativity</a>
-          <a class="tag-container" href="">computers</a>
-          <a class="tag-container" href="">productivity</a>
-        </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="large-8 large-offset-2 columns end"><hr></div>
 
-  <div class="large-12 columns">
-    <div class="large-2 large-offset-2 columns text-center">
-      <a class="th" href="#">
-        <img src="{% static "img/goalGray.png" %}">
-      </a>
-    </div>
-    <div class="large-6 columns blog-post-title end">
-      <h1>Finishing</h1>
-      <h5 class='subheader'>December 23, 2014</h5>
-      <div class="post-description copy">
-        <p>For me, starting a project is thrilling. The unknown is exciting. The opportunity to solve new problems in new ways is inspiring. But nothing compares to the joy of finishing. Starting is easy. Finishing is hard.</p>
-        <div class="row">
-        <p class="tags left">
-          <a class="tag-container" href="">discipline</a>
-          <a class="tag-container" href="">creativity</a>
-          <a class="tag-container" href="">productivity</a>
-        </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="large-8 large-offset-2 columns end"><hr></div>
-
-  <div class="large-12 columns">
-    <div class="large-2 large-offset-2 columns text-center">
-      <a class="th" href="#">
-        <img src="{% static "img/creativity.jpg" %}">
-      </a>
-    </div>
-    <div class="large-6 columns blog-post-title end">
-      <h1>The Threat of Creativity</h1>
-      <h5 class='subheader'>October 23, 2014</h5>
-      <div class="post-description copy">
-        <p>Designers tend to laud the concept of creativity. A unique, original idea that has never existed before. It takes imagination. Skill. Vision. Confidence.</p>
-        <div class="row">
-        <p class="tags left">
-          <a class="tag-container" href="">discipline</a>
-          <a class="tag-container" href="">creativity</a>
-          <a class="tag-container" href="">not so obvious</a>
-          <a class="tag-container" href="">productivity</a>
-        </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  {% block content %}{% endblock content %}
   <!-- footer -->
   <div class="row">
     <div class="footer-space"><br></div>
   </div>
+
   <footer>
     <div class="row">
       <div class="large-6 columns left copyright">
@@ -146,9 +76,9 @@
         <section>
           <ul class="right inline-list">
             <li><a href="https://github.com/xpostudio4"><i class="fi-social-github social-footer"></a></i></li>
-            <li><a href="#"><i class="fi-social-linkedin social-footer"></a></i></li>
-            <li><a href="#"><i class="fi-social-twitter social-footer"></a></i></li>
-            <li><a href="#"><i class="fi-mail social-footer"></a></i></li>
+            <li><a href="https://do.linkedin.com/in/leonardoajimenez"><i class="fi-social-linkedin social-footer"></a></i></li>
+            <li><a href="https://twitter.com/leonardoajim"><i class="fi-social-twitter social-footer"></a></i></li>
+            <li><a href="mailto:leonardo@codetiger.co"><i class="fi-mail social-footer"></a></i></li>
           </ul>
         </section>
       </div>
