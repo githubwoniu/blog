@@ -44,7 +44,7 @@
   {% block entry-next-entry %}
   {% with next_entry=object.next_entry %}
   {% if next_entry %}
-  <div class="left entry-next">
+  <div class="small-4 large-4 columns entry-next">
     <h3>{% trans "Next entry" %}</h3>
     <p>
       <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">
@@ -58,7 +58,7 @@
   {% block entry-previous-entry %}
   {% with previous_entry=object.previous_entry %}
   {% if previous_entry %}
-  <div class="right entry-previous">
+  <div class="small-4 large-4 columns entry-previous">
     <h3>{% trans "Previous entry" %}</h3>
     <p>
       <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
@@ -66,32 +66,17 @@
       </a>
     </p>
   </div>
-  </div>
+
   {% endif %}
   {% endwith %}
   {% endblock entry-previous-entry %}
-  {% block entry-related-entries %}
-  {% with entry_related=object.related_published %}
-  {% if entry_related %}
-  <div class="entry-related">
-    <h3>{% trans "Related entries" %}</h3>
-    <ul>
-      {% for entry in entry_related %}
-      <li>
-	<a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-  {% endwith %}
-  {% endblock entry-related-entries %}
   {% block entry-similar-entries %}
-  <div class="entry-similar">
+  <div class="small-4 large-4 columns entry-similar">
     <h3>{% trans "Similar entries" %}</h3>
     {% get_similar_entries %}
   </div>
   {% endblock entry-similar-entries %}
+</div>
 </div>
 {% endblock entry-widgets %}
 
