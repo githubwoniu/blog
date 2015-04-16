@@ -1,5 +1,5 @@
 {% load i18n staticfiles %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html>
 <html xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>{% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
@@ -70,7 +70,7 @@
   <footer>
     <div class="row">
       <div class="large-6 columns left copyright">
-        Copyright ©2015 Leonardo Jimenez. All Rights Reserved.
+        Copyright ©{% now "Y" %} Leonardo Jimenez. All Rights Reserved.
       </div>
       <div class="large-6 columns right">
         <section>
