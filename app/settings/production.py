@@ -3,9 +3,9 @@ from .base import *
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproductiondatabase',
-        'USER': 'postgres',
-        'PASSWORD': '',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': 'MHuRtn7J1C',
         'HOST': 'LOCALHOST',
         'PORT': '',
     }
