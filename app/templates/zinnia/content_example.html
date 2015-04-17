@@ -1,0 +1,79 @@
+  <!-- Content creation -->
+  <div class="large-12 columns first-post">
+    <div class="large-2 large-offset-2 columns text-center">
+      <a class="th" href="{{ object.get_absolute_url }}">
+        {% if object.image %}
+          <img src="{{ STATIC_URL }}{{ object.image.url}}" alt="{{ object.title}}">
+        {% endif %}
+      </a>
+    </div>
+    <div class="large-6 columns blog-post-title end">
+      <h1>{{ object.title }}</h1>
+      <h5 class='subheader'>{{ object.creation_date | DATE_FORMAT }}</h5>
+      <div class="post-description copy">
+        <p>{{ object_content| safe | truncatewords:20 }}</p>
+        <div class="row">
+        {% with categories=object.categories.all %}
+        {% if categories.length %}
+        <p class="tags left">
+        {% for category in categories %}
+          <a class="tag-container" href="{{ category.get_absolute_url }}">{{ category }}</a>
+        {% endfor %}
+        {% endif %}
+        </p>
+        {% endwith %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="large-8 large-offset-2 columns end"><hr></div>
+
+  <div class="large-12 columns">
+    <div class="large-2 large-offset-2 columns text-center">
+      <a class="th" href="#">
+        <img src="{% static "img/goalGray.png" %}">
+      </a>
+    </div>
+    <div class="large-6 columns blog-post-title end">
+      <h1>Finishing</h1>
+      <h5 class='subheader'>December 23, 2014</h5>
+      <div class="post-description copy">
+        <p>For me, starting a project is thrilling. The unknown is exciting. The opportunity to solve new problems in new ways is inspiring. But nothing compares to the joy of finishing. Starting is easy. Finishing is hard.</p>
+        <div class="row">
+        <p class="tags left">
+          <a class="tag-container" href="">discipline</a>
+          <a class="tag-container" href="">creativity</a>
+          <a class="tag-container" href="">productivity</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="large-8 large-offset-2 columns end"><hr></div>
+
+  <div class="large-12 columns">
+    <div class="large-2 large-offset-2 columns text-center">
+      <a class="th" href="#">
+        <img src="{% static "img/creativity.jpg" %}">
+      </a>
+    </div>
+    <div class="large-6 columns blog-post-title end">
+      <h1>The Threat of Creativity</h1>
+      <h5 class='subheader'>October 23, 2014</h5>
+      <div class="post-description copy">
+        <p>Designers tend to laud the concept of creativity. A unique, original idea that has never existed before. It takes imagination. Skill. Vision. Confidence.</p>
+        <div class="row">
+        <p class="tags left">
+          <a class="tag-container" href="">discipline</a>
+          <a class="tag-container" href="">creativity</a>
+          <a class="tag-container" href="">not so obvious</a>
+          <a class="tag-container" href="">productivity</a>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
