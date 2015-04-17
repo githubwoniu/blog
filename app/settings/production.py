@@ -12,3 +12,11 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+
+ALLOWED_HOSTS = [
+        '127.0.0.1',
+        'leonardo.do',
+        '.leonardo.do',
+        '104.236.61.48',
+        ]
