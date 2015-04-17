@@ -27,8 +27,9 @@
 {% block content %}
 
 {% block content-title %}
+<div class="large-8 large-offset-2 small-8 small-offset-2 columns end">
 {% if category %}
-<h1>{% blocktrans %}Category archives: {{ category }}{% endblocktrans %}</h1>
+<h1>{% blocktrans %}Category archives: <a class="tag-container">{{ category }}</a>{% endblocktrans %}</h1>
 {% if category.description %}
 <p>{{ category.description|striptags|safe }}</p>
 {% endif %}
@@ -56,6 +57,7 @@
   </a>
 </p>
 {% endif %}
+</div>
 {% endblock content-title %}
 
 {% block content-loop %}
