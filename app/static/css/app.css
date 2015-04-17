@@ -8,7 +8,7 @@ h2{
   font-family: 'Lato', Helvetica, Roboto, Arial, sans-serif;
 }
 
-p {
+p, ul li {
 	font-family: 'Merriweather', Helvetica, Roboto, Arial, sans-serif;
 	color: #666;
 }
